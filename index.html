@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- unicons icon cdn file  -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <!-- tailwind css file  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    <!-- css file link  -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Admin Dashboard</title>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <aside>
+        <nav class="relative h-full">
+          <div class="logo-icon pt-4">
+            <i class="uil uil-play-circle"></i>
+          </div>
+          <ul>
+            <li>
+              <a href="#" class="active"><i class="uil uil-home"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="uil uil-calendar-alt"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="uil uil-car"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="uil uil-user"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="uil uil-comment-alt-notes"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="uil uil-exclamation-octagon"></i></a>
+            </li>
+          </ul>
+          <div class="profile-wrapper">
+            <div class="notification pl-2">
+              <i class="text-white uil uil-bell"></i>
+            </div>
+            <div class="image-avatar mt-3">
+              <img
+                src="./assets/avatar.jpg"
+                class="w-10 h-10 rounded-full object-cover"
+                alt=""
+              />
+            </div>
+          </div>
+        </nav>
+      </aside>
+
+      <main>
+        <div class="dashboard-content">
+          <!-- dashboard header -->
+          <div
+            class="dashboard-header py-4 px-4 flex items-center justify-between w-full"
+          >
+            <div class="name">
+              <h2 class="dashboard-title">Good Morning, Emmeline Adele</h2>
+              <span>Today is wednesday, 9 November, 2022</span>
+            </div>
+            <div class="button-div">
+              <a class="main-button" href="#"
+                >Create New.. | <i class="uil uil-angle-down"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- financial and upcoming container  -->
+          <div class="financial-upcoming-container grid grid-cols-12 gap-4">
+            <div
+              class="financial-container border rounded-sm border-indigo-60 col-span-9"
+            >
+              <!-- financial-header  -->
+              <div class="flex items-center justify-between px-3">
+                <div class="financial-name">
+                  <h3 class="text-black font-normal text-3xl">Financial</h3>
+                  <span class="text-gray-500 text-sm mt-3"
+                    >Aug 1, 2021 - Aug 30, 2021</span
+                  >
+                </div>
+                <div class="financial-month">
+                  <select>
+                    <option value="month">Month</option>
+                    <option value="day">Day</option>
+                    <option value="year">Year</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- financial graph  -->
+              <div class="financial-graph-container flex items-end pb-8">
+                <div class="total-revenue">
+                  <p class="text-gray-600 text-sm font-normal">
+                    Total Revenue <span class="text-green-500">+9.71%</span>
+                  </p>
+                  <h1 class="font-black text-black text-2xl mt-2">$3,500,00</h1>
+                  <span class="text-gray-500 mt-2 font-normal text-base"
+                    >Increases of 15% expected to next month</span
+                  >
+                </div>
+                <div class="graph-container">
+                  <canvas
+                    id="myChart"
+                    style="width: 100%; max-width: 500px"
+                  ></canvas>
+                </div>
+              </div>
+              <!-- 1st column  -->
+              <div class="counter py-5 gap-x-6 flex justify-between">
+                <div class="card-wrapper px-4 py7">
+                  <div class="card-header flex justify-between items-center">
+                    <span class="user"><i class="uil uil-users-alt"></i></span>
+                    <div>
+                      <span class="growth"
+                        ><i class="uil uil-arrow-growth"></i>17%</span
+                      >
+                      <small class="small-text">than last month</small>
+                    </div>
+                  </div>
+                  <div class="total-count">
+                    <h5>230</h5>
+                    <p>Total Customers</p>
+                  </div>
+                </div>
+                <!-- 2nd column  -->
+                <div class="card-wrapper middle-card px-4">
+                  <div class="card-header flex justify-between items-center">
+                    <span class="user"><i class="uil uil-users-alt"></i></span>
+                    <div>
+                      <span class="growth"
+                        ><i class="uil uil-arrow-growth"></i>17%</span
+                      >
+                      <small class="small-text">than last month</small>
+                    </div>
+                  </div>
+                  <div class="total-count">
+                    <h5>150</h5>
+                    <p>Total Reserve</p>
+                  </div>
+                </div>
+                <!-- 3rd column  -->
+                <div class="card-wrapper px-4">
+                  <div class="card-header flex justify-between items-center">
+                    <span class="user"><i class="uil uil-users-alt"></i></span>
+                    <div>
+                      <span class="growth"
+                        ><i class="uil uil-arrow-growth"></i>17%</span
+                      >
+                      <small class="small-text">than last month</small>
+                    </div>
+                  </div>
+                  <div class="total-count">
+                    <h5>1260</h5>
+                    <p>Total Vehicles</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- upcoming column start  -->
+            <div class="upcoming-container col-span-3">
+              <h4 class="text-blcak text-2xl font-bold">Upcoming</h4>
+
+              <div class="upcoming-container mt-3">
+                <p class="text-gray-600">Today</p>
+
+                <div class="upcoming-details flex mt-4">
+                  <div class="time-stamp pe-2">
+                    <span class="text-black font-bold">10.30 AM</span>
+                  </div>
+                  <div class="upcoming-name ps-2">
+                    <span>Pickup</span>
+                    <p>Mr Savanna Neughuan</p>
+                  </div>
+                </div>
+
+                <div class="upcoming-details flex mt-4">
+                  <div class="time-stamp pe-2">
+                    <span class="text-black font-bold">10.30 AM</span>
+                  </div>
+                  <div class="upcoming-name ps-2">
+                    <span>Pickup</span>
+                    <p>Mr Savanna Neughuan</p>
+                  </div>
+                </div>
+
+                <div class="upcoming-details flex mt-4">
+                  <div class="time-stamp pe-2">
+                    <span class="text-black font-bold">10.30 AM</span>
+                  </div>
+                  <div class="upcoming-name ps-2">
+                    <span>Pickup</span>
+                    <p>Mr Savanna Neughuan</p>
+                  </div>
+                </div>
+
+                <div class="upcoming-details flex mt-4">
+                  <div class="time-stamp pe-2">
+                    <span class="text-black font-bold">10.30 AM</span>
+                  </div>
+                  <div class="upcoming-name ps-2">
+                    <span>Pickup</span>
+                    <p>Mr Savanna Neughuan</p>
+                  </div>
+                </div>
+
+                <div class="upcoming-details flex mt-4">
+                  <div class="time-stamp pe-2">
+                    <span class="text-black font-bold">10.30 AM</span>
+                  </div>
+                  <div class="upcoming-name ps-2">
+                    <span>Pickup</span>
+                    <p>Mr Savanna Neughuan</p>
+                  </div>
+                </div>
+
+                <div class="upcoming-details flex mt-4">
+                  <div class="time-stamp pe-2">
+                    <span class="text-black font-bold">10.30 AM</span>
+                  </div>
+                  <div class="upcoming-name ps-2">
+                    <span>Pickup</span>
+                    <p>Mr Savanna Neughuan</p>
+                  </div>
+                </div>
+                <div class="upcoming-details flex mt-4">
+                  <div class="time-stamp pe-2">
+                    <span class="text-black font-bold">10.30 AM</span>
+                  </div>
+                  <div class="upcoming-name ps-3">
+                    <span>Pickup</span>
+                    <p>Mr Savanna Neughuan</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- JavaScript file link  -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
